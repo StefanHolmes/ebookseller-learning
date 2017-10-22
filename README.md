@@ -2,6 +2,8 @@
 
 Just following a YouTube tutorial from Traversy Media where a nodejs app uses the Stripe API to process payments.
 
+Tutorial: https://youtu.be/QT3_zT97_1g
+
 Things learned:-
 
 * Setting up a Stripe account and using its API.
