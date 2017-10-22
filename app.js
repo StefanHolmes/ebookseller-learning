@@ -3,8 +3,10 @@ const express = require('express');
 require('dotenv').config();
 
 const keySecret = process.env.STRIPE_SECRET;
+const keyPublishable = process.env.STRIPE_PUBLISHABLE;
 
 console.log(keySecret);
+console.log(keyPublishable);
 
 const stripe = require('stripe')(keySecret);
 const bodyParser = require('body-parser');
@@ -31,9 +33,6 @@ app.get('/', (req, res) => {
 // Charge
 app.post('/charge', (req, res) => {
     const amount = 1337;
-
-    //  console.log(req.body);
-    // res.send('TEST');
 
     stripe.customers.create({
         email: req.body.stripeEmail,
