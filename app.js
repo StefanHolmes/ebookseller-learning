@@ -1,6 +1,8 @@
 const express = require('express');
 
-//require('dotenv').config();
+require('dotenv').config();
+
+console.log(process.env);
 
 const keySecret = process.env.STRIPE_SECRET;
 
