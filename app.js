@@ -2,9 +2,9 @@ const express = require('express');
 
 require('dotenv').config();
 
-console.log(process.env);
-
 const keySecret = process.env.STRIPE_SECRET;
+
+console.log(keySecret);
 
 const stripe = require('stripe')(keySecret);
 const bodyParser = require('body-parser');
