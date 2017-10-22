@@ -5,9 +5,6 @@ require('dotenv').config();
 const keySecret = process.env.STRIPE_SECRET;
 const keyPublishable = process.env.STRIPE_PUBLISHABLE;
 
-console.log(keySecret);
-console.log(keyPublishable);
-
 const stripe = require('stripe')(keySecret);
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
