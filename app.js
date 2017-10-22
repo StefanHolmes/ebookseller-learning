@@ -3,7 +3,6 @@ const express = require('express');
 require('dotenv').config();
 
 const keySecret = process.env.STRIPE_SECRET;
-const keyPublishable = process.env.STRIPE_PUBLISHABLE;
 
 const stripe = require('stripe')(keySecret);
 const bodyParser = require('body-parser');
@@ -24,7 +23,10 @@ app.use(express.static(`${__dirname}/public`));
 
 // Index
 app.get('/', (req, res) => {
-    res.render('index');
+    const keys = {
+        keyPublishable: process.env.STRIPE_PUBLISHABLE
+    }
+    res.render('index', keys);
 });
 
 // Charge
